@@ -223,3 +223,11 @@ app.get('/health', (_req, res) => {
 app.listen(PORT, () => {
   console.log(`Shopify app running on http://localhost:${PORT}`);
 });
+
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "frame-ancestors https://*.myshopify.com https://admin.shopify.com"
+  );
+  next();
+});
