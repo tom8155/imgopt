@@ -1,0 +1,21 @@
+{
+  "name": "shopify-image-audit-app-publishable",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A deployable Shopify app starter for product image audits, settings, and uninstall webhook cleanup.",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "better-sqlite3": "^11.10.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2"
+  }
+}

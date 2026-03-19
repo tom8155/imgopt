@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Audit Pro</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <div class="brand-mark">IA</div>
+          <h2>Image Audit Pro</h2>
+          <p>Review oversized product images before they slow down your storefront.</p>
+        </div>
+        <nav class="side-nav">
+          <button class="nav-link active" data-panel="dashboard">Dashboard</button>
+          <button class="nav-link" data-panel="settings">Settings</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <h1>Product image audit</h1>
+            <p id="shopLabel">Loading shop…</p>
+          </div>
+          <div class="topbar-actions">
+            <button id="refreshButton" class="secondary-btn">Refresh</button>
+            <button id="scanButton" class="primary-btn">Run scan</button>
+          </div>
+        </header>
+
+        <section id="dashboardPanel" class="panel active">
+          <div id="statusBanner" class="status-banner hidden"></div>
+
+          <div class="stats-grid">
+            <article class="stat-card"><span>Total images</span><strong id="metricTotal">—</strong></article>
+            <article class="stat-card"><span>Oversized images</span><strong id="metricOversized">—</strong></article>
+            <article class="stat-card"><span>Average size</span><strong id="metricAverage">—</strong></article>
+            <article class="stat-card"><span>Estimated savings</span><strong id="metricSavings">—</strong></article>
+          </div>
+
+          <section class="card">
+            <div class="card-head">
+              <div>
+                <h3>Image health table</h3>
+                <p>Scan the latest products and review image size recommendations.</p>
+              </div>
+              <div id="paginationArea" class="pagination-area"></div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Preview</th>
+                    <th>Product</th>
+                    <th>Dimensions</th>
+                    <th>File size</th>
+                    <th>Score</th>
+                    <th>Recommendation</th>
+                  </tr>
+                </thead>
+                <tbody id="auditTableBody">
+                  <tr><td colspan="6" class="empty-row">No scan yet.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section id="settingsPanel" class="panel">
+          <section class="card settings-card">
+            <div class="card-head">
+              <div>
+                <h3>Audit settings</h3>
+                <p>These settings shape the thresholds used in your reports.</p>
+              </div>
+            </div>
+            <form id="settingsForm" class="settings-form">
+              <label>
+                <span>Target quality</span>
+                <input type="number" name="image_quality" min="40" max="95" />
+              </label>
+              <label>
+                <span>Large image threshold (KB)</span>
+                <input type="number" name="large_image_threshold_kb" min="100" max="5000" />
+              </label>
+              <label class="checkbox-row">
+                <input type="checkbox" name="auto_scan" />
+                <span>Auto-run a scan each time the app opens</span>
+              </label>
+              <div><button type="submit" class="primary-btn">Save settings</button></div>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
