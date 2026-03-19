@@ -22,7 +22,7 @@ const {
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
 
-['SHOPIFY_API_KEY', 'SHOPIFY_API_SECRET', 'SHOPIFY_SCOPES', 'APP_URL'].forEach((name) => {
+['b8e67dcb960ea9aca4274ec3d77d4b45', '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', 'SHOPIFY_SCOPES', 'APP_URL'].forEach((name) => {
   if (!process.env[name]) throw new Error(`Missing required environment variable: ${name}`);
 });
 
